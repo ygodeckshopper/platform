@@ -1,6 +1,12 @@
 {
-  "extends": "next/core-web-vitals",
-  "rules": {
-    "indent": ["error", 4]
-  }
+    "extends": [
+        "next/core-web-vitals",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "indent": ["error", 4],
+        "prefer-const": ["warn"],
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/no-explicit-any": "off"
+    }
 }
