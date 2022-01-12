@@ -11,6 +11,7 @@ const Home: NextPage = () => {
     const isButtonDisabled = !url && (!file || !file?.name.endsWith(".ydk"));
     const handleImport = (event: any) => { setFile(event?.target.files[0]) }
     const handleUrlChange = (event: any) => { setUrl(event.target.value) }
+
     const handleFileSubmit = (file: any) => {
         if (file?.name.endsWith(".ydk")) {
             const fileReader = new FileReader();
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
                         .then((res) => {
                             res.status !== 200 ?
                                 setErrorText("An error occured while trying to read the file. Make sure it is a .ydk file.") :
-                                console.log(res)
+                                window.location.href = "/f?d=" + Buffer.from(res.data).toString('base64');
                         }).catch((err) => setErrorText(err.message));
                 } else {
                     setErrorText("Invalid deck file");
@@ -40,6 +41,7 @@ const Home: NextPage = () => {
         } else { setErrorText("Please enter a valid URL.") }
     }
     const handleSubmit = () => file ? handleFileSubmit(file) : handleUrlSubmit(url)
+
 
     useEffect(() => {
         !url && file && !file?.name.endsWith(".ydk") ? setErrorText("Please use an .ydk file.") : setErrorText("");

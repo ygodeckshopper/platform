@@ -6,19 +6,23 @@ install:
 dev:
 	@$(PM) run dev
 
-build:
-	@$(PM) run build
-
 lint:
 	@$(PM) run lint
 
 start:
 	@$(PM) run start
 
+build:
+	@$(PM) run build
+
+test:
+	@$(PM) run test
+
 DEFAULT_GOAL:	install
 
 .PHONY:	install \
 	dev \
-	build \
 	lint \
 	start \
+	build \
+	test \
