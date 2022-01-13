@@ -6,7 +6,7 @@ export function getCardById(id: string): Promise<card | null> {
         axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?id=${id}`).then((result) => {
             res(result.data.data[0] as card);
         }).catch((err) => { rej(err)} )
-    })
+    });
 }
 
 export default getCardById;
