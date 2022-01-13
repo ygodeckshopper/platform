@@ -1,10 +1,6 @@
-interface resultType {
-    main: string[];
-    extra: string[];
-    side: string[];
-}
+import { resultType } from "../config/types";
 
-export default function parse(input: string): resultType {
+export default function parse(input: string): resultType | null {
     let key: 'main' | 'extra' | 'side';
     const splitInput = input
         .split('\n')
@@ -16,12 +12,16 @@ export default function parse(input: string): resultType {
                     line.includes('extra') ||
                     line.includes('side'))
         );
-    const result: resultType = { main: [], extra: [], side: [] };
-    splitInput.forEach((line: string) => {
-        if (line.includes('main')) key = 'main';
-        else if (line.includes('extra')) key = 'extra';
-        else if (line.includes('side')) key = 'side';
-        else result[key].push(line);
-    });
-    return result;
+    try {
+        const result: resultType = { main: [], extra: [], side: [] };
+        splitInput.forEach((line: string) => {
+            if (line.includes('main')) key = 'main';
+            else if (line.includes('extra')) key = 'extra';
+            else if (line.includes('side')) key = 'side';
+            else result[key].push(line);
+        });
+        return result;
+    } catch (err) {
+        return null;
+    }
 }
