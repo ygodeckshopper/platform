@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import getCard from '../services/getCard'
+import { getCardById } from '../services/getCard'
 
 export function useCard(id: string) {
     const [card, setCard] = useState();
     useEffect(() => {
-        getCard(id, setCard);
+        getCardById(id).then((card) => {setCard(card)}).catch(() => setCard(undefined));
     }, [setCard, id])
     return [card, setCard];
 }

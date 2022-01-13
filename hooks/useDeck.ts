@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import getDeckFromFile from "../services/getDeckFromFile";
-import getDeckFromUrl from "../services/getDeckFromUrl";
+import { getDeckFromFile, getDeckFromUrl } from "../services/getDeck";
 import { resultType } from "../config/types";
 
 export function useDeck(query: any): resultType | null {

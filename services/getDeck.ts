@@ -5,4 +5,8 @@ export function getDeckFromFile(src: string) {
     return deck;
 }
 
+export function getDeckFromUrl(src: string) {
+    return null;
+}
+
 export default getDeckFromFile;
