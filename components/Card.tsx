@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Image from 'next/image';
 import useCard from '../hooks/useCard';
 
@@ -16,22 +15,11 @@ export function Card ({id, variant = "default"}: CardProps) {
             }
         </div>
     )
-=======
-import useCard from '../hooks/useCard';
-
-export function Card ({id}: CardProps) {
-    const [card, setCard] = useCard(id);
-    console.log(card);
-    return (<></>)
->>>>>>> 39fec1e (feat(platform): add deck page and card getting)
 }
 
 export interface CardProps {
     id: string;
-<<<<<<< HEAD
     variant?: "small" | "default"
-=======
->>>>>>> 39fec1e (feat(platform): add deck page and card getting)
 }
 
 export default Card;
