@@ -1,6 +1,6 @@
-import { resultType } from "../config/types";
+import { Deck } from "../config/types";
 
-export default function parse(input: string): resultType | null {
+export default function parse(input: string): Deck | null {
     let key: 'main' | 'extra' | 'side';
     const splitInput = input
         .split('\n')
@@ -13,7 +13,7 @@ export default function parse(input: string): resultType | null {
                     line.includes('side'))
         );
     try {
-        const result: resultType = { main: [], extra: [], side: [] };
+        const result: Deck = { main: [], extra: [], side: [] };
         splitInput.forEach((line: string) => {
             if (line.includes('main')) key = 'main';
             else if (line.includes('extra')) key = 'extra';
