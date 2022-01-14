@@ -7,9 +7,12 @@ const DeckPage: NextPage = () => {
     const router = useRouter()
     const deck = useDeck(router.query);
     return deck !== null ? (
-        <div className="h-screen w-screen bg-slate-600 text-white">
-            {JSON.stringify(deck)}
-            <Card id={deck.main[0]}></Card>
+        <div className="bg-slate-600 text-white grid grid-cols-4 gap-4 flex-wrap px-24">
+            {deck.main.map((id) => {
+                return (
+                    <Card id={id} key={id}/>
+                )
+            })}
         </div>
     ) : (
         <div className="h-screen w-screen flex items-center justify-center bg-slate-600">
