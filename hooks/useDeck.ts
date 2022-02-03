@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { getDeckFromFile, getDeckFromUrl } from "../services/getDeck";
-import { Deck } from "../config/types";
+import { IDeck } from "../config/types";
 
-export function useDeck(query: any): Deck | null {
-    const [deck, setDeck] = useState<Deck | null>(null);
+export function useDeck(query: any): IDeck | null {
+    const [deck, setDeck] = useState<IDeck | null>(null);
 
     useEffect(() => {
         if (query.f) {

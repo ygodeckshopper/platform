@@ -1,4 +1,4 @@
-export interface Deck {
+export interface IDeck {
     main: string[];
     extra: string[];
     side: string[];

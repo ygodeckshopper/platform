@@ -1,6 +1,6 @@
-import { Deck } from "../config/types";
+import { IDeck } from "../config/types";
 
-export default function parse(input: string): Deck | null {
+export default function parse(input: string): IDeck | null {
     let key: 'main' | 'extra' | 'side';
     const splitInput = input
         .split('\n')
@@ -13,7 +13,7 @@ export default function parse(input: string): Deck | null {
                     line.includes('side'))
         );
     try {
-        const result: Deck = { main: [], extra: [], side: [] };
+        const result: IDeck = { main: [], extra: [], side: [] };
         splitInput.forEach((line: string) => {
             if (line.includes('main')) key = 'main';
             else if (line.includes('extra')) key = 'extra';
