@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 import { useRouter } from "next/router"
-import Card from "../components/Card"
+import Deck from "../components/Deck"
 import { useDeck } from "../hooks/useDeck"
 
 const DeckPage: NextPage = () => {
@@ -8,11 +8,7 @@ const DeckPage: NextPage = () => {
     const deck = useDeck(router.query);
     return deck !== null ? (
         <div className="bg-slate-600 text-white grid grid-cols-4 gap-4 flex-wrap px-24">
-            {deck.main.map((id) => {
-                return (
-                    <Card id={id} key={id}/>
-                )
-            })}
+            <Deck deck={deck} />
         </div>
     ) : (
         <div className="h-screen w-screen flex items-center justify-center bg-slate-600">
