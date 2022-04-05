@@ -1,9 +1,3 @@
-export interface IDeck {
-    main: string[];
-    extra: string[];
-    side: string[];
-}
-
 export interface card_set {
     set_name: string;
     set_code: string;
@@ -37,6 +31,19 @@ export interface card  {
     attribute?: string;
     archetype?: string;
     sets: card_set[];
+    type: string;
     card_images: card_images[];
     card_prices: card_prices[];
+}
+
+export interface IDeck {
+    main: string[];
+    extra: string[];
+    side: string[];
+}
+
+export interface IDeckData {
+    main: { monsters: card[], spells: card[], traps: card[] };
+    extra: card[];
+    side: { monsters: card[], spells: card[], traps: card[] };
 }

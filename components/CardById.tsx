@@ -1,7 +1,9 @@
 import Image from 'next/image';
-import { card } from '../config/types';
+import useCard from '../hooks/useCard';
 
-export function Card ({card, variant = "default"}: CardProps) {
+export function CardById ({id, variant = "default"}: CardByIdProps) {
+    const card = useCard(id);
+    console.log(card);
     return (
         <div className={"flex items-center justify-center"}>
             {card ?
@@ -15,9 +17,9 @@ export function Card ({card, variant = "default"}: CardProps) {
     )
 }
 
-export interface CardProps {
-    card: card;
+export interface CardByIdProps {
+    id: string;
     variant?: "small" | "default"
 }
 
-export default Card;
+export default CardById;
