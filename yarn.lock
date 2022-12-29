@@ -1918,10 +1918,10 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-snyk@^1.854.0:
-  version "1.854.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.854.0.tgz#17a73234613e241391a662dd95afd22769629897"
-  integrity sha512-kR+P/X01Sf13YPF+BYOWa3Kjetr84pvYiCz1ec0gFgI3aJ5qDWDxOIfTcdiPWFPS1rHSAfhvZThumhxJUTwT+Q==
+snyk@^1.1079.0:
+  version "1.1079.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.1079.0.tgz#de17afec667597d2d51e33510dcc2cd317d107a9"
+  integrity sha512-vrg9l9in8S01Yya3L9Ub/Qsaa5/CtNJtjQdRXq0+JNU/7wznuu8wGzuVaVOMfI75q9woyD/6m6ZJIf0TgcTe5g==
 
 source-map-js@^1.0.1, source-map-js@^1.0.2:
   version "1.0.2"
